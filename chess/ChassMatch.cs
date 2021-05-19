@@ -81,7 +81,7 @@ namespace chess
             return capturedPiece;
         }
 
-        public void Position(Position origin, Position destiny, Piece capturedPiece)
+        public void undoMove(Position origin, Position destiny, Piece capturedPiece)
         {
             Piece p = brd.removePiece(destiny);
             p.MoveQtyDecrease();
@@ -157,7 +157,7 @@ namespace chess
                 }
             }
 
-            if (InCheck(opponent(currentPlayer)))
+            if (inCheck(opponent(currentPlayer)))
             {
                 check = true;
             }
@@ -166,7 +166,7 @@ namespace chess
                 check = false;
             }
 
-            if (checkmateTest(opponent(currentPlayer)))
+            if (checkmateTeste(opponent(currentPlayer)))
             {
                 finished = true;
             }
@@ -237,7 +237,7 @@ namespace chess
             return aux;
         }
 
-        public HashSet<Piece> pecasEmJogo(Color color)
+        public HashSet<Piece> piecesInGame(Color color)
         {
             HashSet<Piece> aux = new HashSet<Piece>();
             foreach (Piece x in pieces)
@@ -330,7 +330,7 @@ namespace chess
             pieces.Add(piece);
         }
 
-        private void colocarPecas()
+        private void setPieces()
         {
             setNewPiece('a', 1, new Torre(brd, Color.White));
             setNewPiece('b', 1, new Cavalo(brd, Color.White));

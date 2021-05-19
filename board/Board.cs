@@ -14,12 +14,12 @@
             pieces = new Piece[lines, columns];
         }
 
-        public Piece Piece(int line, int column)
+        public Piece piece(int line, int column)
         {
             return pieces[line, column];
         }
 
-        public Piece Piece(Position pos)
+        public Piece piece(Position pos)
         {
             return pieces[pos.line, pos.column];
         }
