@@ -10,13 +10,13 @@ namespace xadrez_console
 
         public static void printMatch(ChessMatch match)
         {
-            printMatch(match.board);
+            printMatch(match.brd);
             Console.WriteLine();
             printCapturedPieces(match); 
 
             Console.WriteLine();
             Console.WriteLine("Shift: " + match.shift);
-            if (!match.over)
+            if (!match.finished)
             {
                 Console.WriteLine("Waiting a move: " + match.currentPlayer);
                 if (match.check)
@@ -89,7 +89,7 @@ namespace xadrez_console
                     {
                         Console.BackgroundColor = originalBackground;
                     }
-                    imprimirPeca(brd.piece(i, j));
+                    printPiece(brd.piece(i, j));
                     Console.BackgroundColor = originalBackground;
                 }
                 Console.WriteLine();
