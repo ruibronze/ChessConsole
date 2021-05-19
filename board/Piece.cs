@@ -8,7 +8,7 @@
         public int moveQty { get; protected set; }
         public Board brd { get; protected set; }
 
-        public Piece(Board brd, Color cor)
+        public Piece(Board brd, Color color)
         {
             this.position = null;
             this.brd = brd;
@@ -31,7 +31,7 @@
             bool[,] mat = possibleMoves();
             for (int i = 0; i < brd.lines; i++)
             {
-                for (int j = 0; j < brd.colunms; j++)
+                for (int j = 0; j < brd.columns; j++)
                 {
                     if (mat[i, j])
                     {
@@ -44,7 +44,7 @@
 
         public bool possibleMoves(Position pos)
         {
-            return possibleMoves()[pos.line, pos.colnm];
+            return possibleMoves()[pos.line, pos.column];
         }
 
         public abstract bool[,] possibleMoves();
