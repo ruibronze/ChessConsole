@@ -12,7 +12,7 @@ namespace chess
 
         public override string ToString()
         {
-            return "Kn";
+            return "H";
         }
 
         private bool canMove(Position pos)

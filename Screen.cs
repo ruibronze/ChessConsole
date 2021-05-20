@@ -10,7 +10,7 @@ namespace xadrez_console
 
         public static void printMatch(ChessMatch match)
         {
-            printMatch(match.brd);
+            printBoard(match.brd);
             Console.WriteLine();
             printCapturedPieces(match); 
 

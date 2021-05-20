@@ -8,7 +8,6 @@ namespace xadrez_console
     {
         static void Main(string[] args)
         {
-
             try
             {
                 ChessMatch match = new ChessMatch();
